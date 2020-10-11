@@ -41,22 +41,18 @@ const PokeCard = ({ name, id, types, stats }) => {
                 </span>
               ))}
           </small>
-          {
-            openWindow && (
-              <>
-                <ul className="stats">
-                  {stats.map((elem) => (
-                    <li className="stats-elem" key={elem.stat.name}>
-                      <span className="stats-elem__name">{elem.stat.name}</span>{" "}
-                      <span className="stats-elem__value">
-                        {elem.base_stat}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )
-          }
+          {openWindow && (
+            <>
+              <ul className="stats">
+                {stats.map((elem) => (
+                  <li className="stats-elem" key={elem.stat.name}>
+                    <span className="stats-elem__name">{elem.stat.name}</span>{" "}
+                    <span className="stats-elem__value">{elem.base_stat}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </>
