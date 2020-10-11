@@ -11,7 +11,7 @@ yarn start
 Runs the app in the development mode.
 Open  [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
-The page will reload if you make edits.
+# Technologies:
 For this project I have used the following technologies:
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
@@ -20,4 +20,6 @@ For this project I have used the following technologies:
 * [BEM methodology](https://en.bem.info/methodology/)
 * [JS ES6](https://ru.wikipedia.org/wiki/ECMAScript)
 * [ReactJS](https://reactjs.org/)
+* [MobX](https://mobx.js.org/README.html)
+
 
