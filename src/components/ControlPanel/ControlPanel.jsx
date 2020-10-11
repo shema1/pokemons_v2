@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import store from "../../store/store";
 
-const ControlPanel = ({ sortByName }) => {
+const ControlPanel = () => {
   const [activeButton, setActiveButton] = useState(10);
 
   const buttonHandler = (value) => {
@@ -49,9 +49,5 @@ const ControlPanel = ({ sortByName }) => {
   );
 };
 
-ControlPanel.propTypess = {
-  sortByName: PropTypes.func,
-  changeCardQuantity: PropTypes.func,
-};
 
 export default ControlPanel;

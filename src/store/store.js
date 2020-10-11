@@ -1,4 +1,4 @@
-import { observable, computed, configure, action, decorate, runInAction } from 'mobx';
+import { observable, computed, action } from 'mobx';
 import { fetchPokeList, fetchPoke, fetchPokeListWhithParam, fetchPokeListWhithQuantity } from "../gateway/gateway"
 
 const store = observable(
@@ -68,14 +68,10 @@ const store = observable(
         },
 
         findPokemon(query) {
-            // if (query) {
             this.setFilter(query)
             const regex = new RegExp(query.trim(), "i");
             let result = this.pokemonList.filter((elem) => elem.name.search(regex) >= 0);
             this.setFilteredPokemons(result);
-            // } else {
-            //     return
-            // }
         },
 
         setNextPage(param) {
@@ -120,7 +116,6 @@ const store = observable(
         cardOnPage: observable,
         nextPage: observable,
         prevPage: observable,
-        pokemonList: observable,
         filteredPokemonList: observable,
         filter: observable,
         goNextPage: action.bound,
@@ -130,47 +125,11 @@ const store = observable(
         sortBy: action,
         setNextPage: action,
         setPokemons: action,
-        setPageCounter: action,
-        setPageCounter: action,
         setCardOnPage: action,
         setFilteredPokemons: action,
         pokemons: computed,
     }
 )
 
-
-
 export default store
 
-// class store {
-
-
-//     pokemonList: null
-
-//     getPokemons() {
-//         let responseList = []
-//         fetchPokeList().then(response => {
-//             response.results.map(elem => responseList.push(fetchPoke(elem.url)))
-//             Promise.all(responseList).then(response => this.setPokemons(response))
-//         })
-//     }
-
-//     setPokemons(results) {
-//         console.log(results)
-//         this.pokemonList = [results]
-//     }
-
-//     test() {
-//         this.pokemonList++
-//     }
-
-
-// };
-
-// decorate(Store, {
-//     pokemonList: observable,
-//     getPokemons: action.bound,
-//     setPokemons: action
-// })
-
-// export default store
